@@ -12,6 +12,10 @@ module BancBoxCrowd
 			object_from_response(BancBoxCrowd::Id, :post, 'createEscrowAccount', options)
 		end
 
+		def modify_escrow options
+			object_from_response(BancBoxCrowd::Id, :post, 'updateEscrowAccount', options)
+		end
+
 		def submit_agreement options
 			get_response(:post, 'submitAgreement', options)
 		end
