@@ -49,6 +49,13 @@ module BancBoxCrowd
 			get_response(:post, 'fundEscrow', data)
 		end
 
+   def get_escrow_details options
+      data = {
+        :fund_on_availability => boolean_to_y_n(options.delete(:fund_on_availability))
+      }
+      data.merge! options
+      get_response(:post, 'getEscrowDetails', options)
+    end
 		private
 
 		def formatted_time(time)
