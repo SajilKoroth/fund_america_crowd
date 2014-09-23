@@ -31,6 +31,10 @@ module BancBoxCrowd
 		def verify_answers options
 			get_response(:post, 'verifyAnswers', options)
 		end
+		
+		def get_investor_details options
+      get_response(:post, 'getInvestorDetails', options)
+    end
 
 		def fund_account options
 			data = {
