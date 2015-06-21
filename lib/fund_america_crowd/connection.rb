@@ -1,10 +1,10 @@
-module BancBoxCrowd
+module FundAmericaCrowd
   class Connection
 
     def initialize
-      @key = BancBoxCrowd::Config.api_key
-      @secret = BancBoxCrowd::Config.api_secret
-      @base_url = BancBoxCrowd::Config.base_url
+      @key = FundAmericaCrowd::Config.api_key
+      #@secret = FundAmericaCrowd::Config.api_secret
+      @base_url = FundAmericaCrowd::Config.base_url
     end
 
     # Perform an HTTP POST request
@@ -31,8 +31,9 @@ module BancBoxCrowd
 
     def authentication_data
       { 
-        'api_key' => BancBoxCrowd::Config.api_key,
-        'secret' => BancBoxCrowd::Config.api_secret
+        #'user' => 'WY0EIfchfdEwDonUJNngLVrIrIecP9T3',
+        #'password' =>''
+       # 'secret' => FundAmericaCrowd::Config.api_secret
       }
     end
 
@@ -46,7 +47,9 @@ module BancBoxCrowd
         builder.use FaradayMiddleware::EncodeJson
         builder.use FaradayMiddleware::ParseJson
         # builder.use FaradayMiddleware::Mashify
-        builder.adapter Faraday.default_adapter
+        #builder.adapter Faraday.default_adapter
+        builder.use Faraday::Request::BasicAuthentication, @key, nil
+        builder.use Faraday::Adapter::NetHttp
       end
     end
   end

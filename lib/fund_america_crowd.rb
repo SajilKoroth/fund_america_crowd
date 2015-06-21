@@ -6,12 +6,12 @@ files = [
 ]
 
 files.each do |file|
-  require File.join(File.dirname(__FILE__), 'banc_box_crowd', file)
+  require File.join(File.dirname(__FILE__), 'fund_america_crowd', file)
 end
 
-module BancBoxCrowd
+module FundAmericaCrowd
 
-  extend BancBoxCrowd::Api
+  extend FundAmericaCrowd::Api
 
   def self.configure
     yield Config
@@ -19,6 +19,6 @@ module BancBoxCrowd
   end
 
   def self.connection
-    @connection ||= BancBoxCrowd::Connection.new
+    @connection ||= FundAmericaCrowd::Connection.new
   end
 end

@@ -2,15 +2,15 @@ Gem::Specification.new do |s|
   s.specification_version = 2 if s.respond_to? :specification_version=
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5") if s.respond_to? :required_rubygems_version=
 
-  s.name    = 'banc_box_crowd'
+  s.name    = 'fund_america_crowd'
   s.version = '0.0.1'
 
-  s.summary     = 'Library for accessing the BancBoxCrowd REST API'
+  s.summary     = 'Library for accessing the FundAmerica REST API'
   # TODO: s.description
 
-  s.authors  = ['Roger Smith']
-  s.email    = 'rogsmith@gmail.com'
-  s.homepage = 'https://github.com/rogsmith/banc_box_crowd'
+  s.authors  = ['Sajil Koroth']
+  s.email    = 'sajil.koroth@gmail.com'
+  s.homepage = 'https://github.com/sajilkoroth/fund_america_crowd'
 
   s.add_dependency 'faraday'
   s.add_dependency 'faraday_middleware'

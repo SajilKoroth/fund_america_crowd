@@ -1,4 +1,4 @@
-module BancBoxCrowd
+module FundAmericaCrowd
   module Config
     def self.base_url=(url)
       @base_url = url

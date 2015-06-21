@@ -1,4 +1,4 @@
-module BancBoxCrowd
+module FundAmericaCrowd
   class Error < StandardError
 
     attr_reader :data
