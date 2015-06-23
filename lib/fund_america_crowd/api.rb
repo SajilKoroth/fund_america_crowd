@@ -1,10 +1,6 @@
 module FundAmericaCrowd
 	module Api
-		def create_investor options
-			get_response(:post, 'entities', options)
-		end
-
-		def create_issuer options
+		def create_entities options
 			get_response(:post, 'entities', options)
 		end
 

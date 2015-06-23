@@ -9,36 +9,36 @@ describe FundAmericaCrowd do
     end
   end
 
-  # it 'should create an investor and return its id' do
-    # WebMock.stub_request(
-      # :post,
-      # "https://sandbox.fundamerica.com/api/"
-    # ).to_return(
-      # :status => 200
-    # )
-    # begin
-      # data = FundAmericaCrowd.create_investor({
-        # :city => 'New York',
-        # :country=>'US',
-        # :email=>'sajil@nefund.co',
-        # :name=>'Sajil Koroth2',
-        # :phone=>'12025551212',
-        # :postal_code=>'10005',
-        # :region=>'NY',
-        # :street_address_1=>'Somewhere ',
-        # :tax_id_number=>'999999999',
-        # :type=>'person',
-        # :executive_name=>'Sajil Koroth',
-        # :region_formed_in=>'NY',
-        # :ignore_exceptions =>'No',
-        # :date_of_birth =>'1978-01-14'
-      # })
-    # rescue Exception => e
-      # puts e
-    # end 
-    # puts data
-    # #data.should be_an_instance_of(FundAmericaCrowd::Id)
-  # end
+  it 'should create an investor and return its id' do
+    WebMock.stub_request(
+      :post,
+      "https://sandbox.fundamerica.com/api/"
+    ).to_return(
+      :status => 200
+    )
+    begin
+      data = FundAmericaCrowd.create_entities({
+        :city => 'New York',
+        :country=>'US',
+        :email=>'sajil@nefund.co',
+        :name=>'Sajil Koroth2',
+        :phone=>'12025551212',
+        :postal_code=>'10005',
+        :region=>'NY',
+        :street_address_1=>'Somewhere ',
+        :tax_id_number=>'999999999',
+        :type=>'person',
+        :executive_name=>'Sajil Koroth',
+        :region_formed_in=>'NY',
+        :ignore_exceptions =>'No',
+        :date_of_birth =>'1978-01-14'
+      })
+    rescue Exception => e
+      puts e
+    end 
+    puts data
+    #data.should be_an_instance_of(FundAmericaCrowd::Id)
+  end
 
   # it 'should create a company and return its id' do
     # WebMock.stub_request(
@@ -165,28 +165,28 @@ describe FundAmericaCrowd do
     # puts data
    # end
    
-   it 'should create ach token' do
-   WebMock.stub_request(
-      :post,
-      "https://sandbox.fundamerica.com/api/"
-    ).to_return(
-      :status => 200
-    )
-    begin
-      data = FundAmericaCrowd.create_ach_tokens({
-        :entity_id => 'v_PQ-HE8QTKoslZaF6JNHA',
-        :ach_authorization =>{
-        :account_type => "checking",
-        :check_type => "business",
-        :account_number => "12312312",
-        :routing_number => "123123123"
-      }
-      })
-    rescue Exception => e
-      puts e
-    end 
-    @escrow_service_application_id = data['id']
-    puts data
-   end
+   # it 'should create ach token' do
+   # WebMock.stub_request(
+      # :post,
+      # "https://sandbox.fundamerica.com/api/"
+    # ).to_return(
+      # :status => 200
+    # )
+    # begin
+      # data = FundAmericaCrowd.create_ach_tokens({
+        # :entity_id => 'v_PQ-HE8QTKoslZaF6JNHA',
+        # :ach_authorization =>{
+        # :account_type => "checking",
+        # :check_type => "business",
+        # :account_number => "12312312",
+        # :routing_number => "123123123"
+      # }
+      # })
+    # rescue Exception => e
+      # puts e
+    # end 
+    # @escrow_service_application_id = data['id']
+    # puts data
+   # end
   
 end
